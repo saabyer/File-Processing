@@ -164,10 +164,82 @@ void create_new_file(std::string filename) {
     file.close();
 }
 
+void print_vector(std::vector<student> &students) {
+    for (int i = 0; i < students.size(); i++) {
+        std::cout << students[i].StudentID << "\t";
+        std::cout << students[i].Surname << "\t";
+        std::cout << students[i].FirstName << "\t";
+        std::cout << students[i].BirthDate << "\t";
+        std::cout << students[i].Sex << "\n";
+    }
+}
+
+//sort by lastname
+void sort_by_surname(std::string sort_by, std::string filename, std::vector<student> &students) {
+    student temp;
+    if(toupper(sort_by[0]) == 'A') {//sort in ascending order using bubble sort
+        for(int i = 0; i < students.size(); i++) {
+            for(int j = i+ 1; j < students.size(); j++) {
+                if(toupper(students[j].Surname[0])-'a' < toupper(students[i].Surname[0])-'a') {
+                    //std::cout << "Check" << std::endl;
+                    temp.StudentID = students[i].StudentID;
+                    temp.Surname = students[i].Surname;
+                    temp.FirstName = students[i].FirstName;
+                    temp.BirthDate = students[i].BirthDate;
+                    temp.Sex = students[i].Sex;
+
+                    students[i].StudentID = students[j].StudentID;
+                    students[i].Surname = students[j].Surname;
+                    students[i].FirstName = students[j].FirstName;
+                    students[i].BirthDate = students[j].BirthDate;
+                    students[i].Sex = students[j].Sex;
+
+                    students[j].StudentID = temp.StudentID;
+                    students[j].Surname = temp.Surname;
+                    students[j].FirstName = temp.FirstName;
+                    students[j].BirthDate = temp.BirthDate;
+                    students[j].Sex = temp.Sex;
+                }
+            }
+        }
+    }
+
+    else if(toupper(sort_by[0]) == 'D') {//sort in descending order using bubble sort
+        for(int i = 0; i < students.size(); i++) {
+            for(int j = i+ 1; j < students.size(); j++) {
+                if(toupper(students[j].Surname)-'a' > toupper(students[i].Surname)-'a') {
+                    //std::cout << "Check" << std::endl;
+                    temp.StudentID = students[i].StudentID;
+                    temp.Surname = students[i].Surname;
+                    temp.FirstName = students[i].FirstName;
+                    temp.BirthDate = students[i].BirthDate;
+                    temp.Sex = students[i].Sex;
+
+                    students[i].StudentID = students[j].StudentID;
+                    students[i].Surname = students[j].Surname;
+                    students[i].FirstName = students[j].FirstName;
+                    students[i].BirthDate = students[j].BirthDate;
+                    students[i].Sex = students[j].Sex;
+
+                    students[j].StudentID = temp.StudentID;
+                    students[j].Surname = temp.Surname;
+                    students[j].FirstName = temp.FirstName;
+                    students[j].BirthDate = temp.BirthDate;
+                    students[j].Sex = temp.Sex;
+                }
+            }
+        }
+    }
+    
+    //print_vector(students);
+    save_exit(filename, students);
+}
+
 int main() {
     system("CLS");
     int answer1;
     int answer2;
+    std::string sort_by;
     std::string ID;
     std::string filename;
     std::vector<student> students;
@@ -187,7 +259,7 @@ int main() {
             std::cin >> filename;
             if(open_existing_file(filename, students)== true) {
                 do {
-                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Save and Exit [5] Exit Without Saving\n";
+                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Save and Exit [6] Exit Without Saving\n";
                     std::cout << "Answer: ";
                     std::cin >> answer2;
                     switch(answer2) {
@@ -209,10 +281,16 @@ int main() {
                         break;
 
                     case 4:
-                        save_exit(filename, students);
+                        std::cout <<"Sorting Surname in [A]scending or [D]esceding order: ";
+                        std::cin >> sort_by;
+                        sort_by_surname(sort_by, filename, students);
                         break;
 
                     case 5:
+                        save_exit(filename, students);
+                        break;
+
+                    case 6:
                         exit(0);
                         break;
 
