@@ -50,6 +50,7 @@ void add_student(std::vector<student> &students) {
     students.push_back(temp);
 }
 
+//saves the data you want to add to the text file and exit
 void save_exit(std::string filename, std::vector<student> &students) {
     filename.append(".txt");
     std::ofstream file(filename);
@@ -78,6 +79,7 @@ void save_exit(std::string filename, std::vector<student> &students) {
     }
 }
 
+//edits the data of a specific student inside the text file
 void edit_record(std::string ID, std::vector<student> &students, std::string filename) {
     student temp;
     for(int i = 0; i < students.size(); i++) {
@@ -104,6 +106,7 @@ void edit_record(std::string ID, std::vector<student> &students, std::string fil
     save_exit(filename, students);
 }
 
+//deletes the data of a specific student in the text file
 void delete_record(std::string ID, std::vector<student> &students, std::string filename) {
     student temp;
     for(int i = 0; i < students.size(); i++) {
@@ -118,6 +121,7 @@ void delete_record(std::string ID, std::vector<student> &students, std::string f
     save_exit(filename, students);
 }
 
+//opens a text file
 bool open_existing_file(std::string filename, std::vector<student> &students) {
     bool flag = false;
     std::string temp_string = filename;
@@ -125,7 +129,7 @@ bool open_existing_file(std::string filename, std::vector<student> &students) {
     student temp;
     filename.append(".txt");
     std::ifstream file(filename);
-    if(file.is_open() && !is_empty(file)) {
+    if(file.is_open() && !is_empty(file)) {//check if the file is not empty
         flag = true;
         show(temp_string);
         while(!file.eof()) {
@@ -138,7 +142,7 @@ bool open_existing_file(std::string filename, std::vector<student> &students) {
         }
         file.close();
     }
-    else if(file.is_open() && is_empty(file)) {
+    else if(file.is_open() && is_empty(file)) { // check if the files is empty
         flag = true;
         students.clear();
         std::cout << "No data currently.\n";
@@ -150,6 +154,7 @@ bool open_existing_file(std::string filename, std::vector<student> &students) {
     return flag;
 }
 
+//creates a new text file
 void create_new_file(std::string filename) {
     filename.append(".txt");
     std::ofstream file(filename);
@@ -160,7 +165,6 @@ void create_new_file(std::string filename) {
 }
 
 int main() {
-    int current_size;
     system("CLS");
     int answer1;
     int answer2;
