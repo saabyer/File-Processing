@@ -159,17 +159,6 @@ void create_new_file(std::string filename) {
     file.close();
 }
 
-
-void print_vector(std::vector<student> &students) {
-    for (int i = 0; i < students.size(); i++) {
-        std::cout << students[i].StudentID << "\t";
-        std::cout << students[i].Surname << "\t";
-        std::cout << students[i].FirstName << "\t";
-        std::cout << students[i].BirthDate << "\t";
-        std::cout << students[i].Sex << "\n";
-    }
-}
-
 int main() {
     int current_size;
     system("CLS");
