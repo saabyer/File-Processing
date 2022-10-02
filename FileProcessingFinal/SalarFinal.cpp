@@ -454,12 +454,12 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
     save_exit(filename, students);
 }
 
-//sort by birthdate
+//sort by sex
 void sort_by_sex(std::string sort_by, std::string filename, std::vector<student> &students) {
     student temp;
     char temp_answer;
     char temp_answer2;
-    if(toupper(sort_by[0]) == 'F') {//sort in ascending order using bubble sort
+    if(toupper(sort_by[0]) == 'F') {//sorting with females first
         for(int i = 0; i < students.size(); i++) {
             for(int j = i+ 1; j < students.size(); j++) {
                 temp_answer = toupper(students[j].Sex[0]);
@@ -486,7 +486,7 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
             }
         }
     }
-    else if(toupper(sort_by[0]) == 'M') {//sort in descending order using bubble sort
+    else if(toupper(sort_by[0]) == 'M') {//sorting with males first
         for(int i = 0; i < students.size(); i++) {
             for(int j = i+ 1; j < students.size(); j++) {
                 temp_answer = toupper(students[j].Sex[0]);
