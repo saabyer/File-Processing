@@ -36,7 +36,7 @@ void show(std::string filename) {
 
 //adds a student to the list of students
 void add_student(std::vector<student> &students) {
-    student temp;
+    student temp;       //temporarily stores the data in this variable
 
     std::cin.ignore();
     std::cout << "Student ID: ";
@@ -50,10 +50,10 @@ void add_student(std::vector<student> &students) {
     std::cout << "Sex: ";
     std::getline(std::cin, temp.Sex);
 
-    students.push_back(temp);
+    students.push_back(temp); //pushes temp to the vector
 }
 
-//saves the data you want to add to the text file and exit
+//saves the data you want to add to the text file and exits the program
 void save_exit(std::string filename, std::vector<student> &students) {
     filename.append(".txt");
     std::ofstream file(filename);
@@ -109,7 +109,7 @@ void edit_record(std::string ID, std::vector<student> &students, std::string fil
     save_exit(filename, students);
 }
 
-//deletes the data of a specific student in the text file
+//deletes all the data of a specific student in the text file
 void delete_record(std::string ID, std::vector<student> &students, std::string filename) {
     student temp;
     for(int i = 0; i < students.size(); i++) {
