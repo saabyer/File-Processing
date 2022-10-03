@@ -430,47 +430,47 @@ void filter(std::string answer, std::vector<student> students) {
     char choice = toupper(answer[0]);
     if(choice == 'S') {
         system("cls");
-        std::cout << "---------\n";
-        std::cout << "Surname\t|\n";
-        std::cout << "---------\n";
+        std::cout << "-------------------------\n";
+        std::cout << "\tSurname\t\t|\n";
+        std::cout << "-------------------------\n";
         for (int i = 0; i < students.size(); i++) {
             std::cout << students[i].Surname << "\t|\n";
         }
     }
     else if(choice == 'F') {
         system("cls");
-        std::cout << "-----------------\n";
-        std::cout << "Firstname\t|\n";
-        std::cout << "-----------------\n";
+        std::cout << "-------------------------\n";
+        std::cout << "\tFirstname\t|\n";
+        std::cout << "-------------------------\n";
         for (int i = 0; i < students.size(); i++) {
             std::cout << students[i].FirstName << "\t|\n";
         }
     }
     else if(choice == 'I') {
         system("cls");
-        std::cout << "-----------------\n";
-        std::cout << "Student ID\t|\n";
-        std::cout << "-----------------\n";
+        std::cout << "-------------------------\n";
+        std::cout << "\tStudent ID\t|\n";
+        std::cout << "-------------------------\n";
         for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].StudentID << "\t|\n";
+            std::cout << students[i].StudentID << "\t\t|\n";
         }
     }
     else if(choice == 'B') {
         system("cls");
-        std::cout << "-----------------\n";
-        std::cout << "Birth Date\t|\n";
-        std::cout << "-----------------\n";
+        std::cout << "-------------------------\n";
+        std::cout << "\tBirth Date\t|\n";
+        std::cout << "-------------------------\n";
         for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].BirthDate << "\t|\n";
+            std::cout << students[i].BirthDate << "\t\t|\n";
         }
     }
     else if(choice == 'X') {
         system("cls");
-        std::cout << "---------\n";
-        std::cout << "Sex\t|\n";
-        std::cout << "---------\n";
+        std::cout << "-------------------------\n";
+        std::cout << "\tSex\t\t|\n";
+        std::cout << "-------------------------\n";
         for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].Sex << "\t|\n";
+            std::cout <<"\t"<< students[i].Sex << "\t\t|\n";
         }
     }
     else {
