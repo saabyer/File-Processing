@@ -193,23 +193,9 @@ void sort_by_lastname(std::string sort_by, std::string filename, std::vector<stu
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name < temp_name2) {
                     //std::cout << "Check Ascending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -223,23 +209,9 @@ void sort_by_lastname(std::string sort_by, std::string filename, std::vector<stu
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name > temp_name2) {
                     //std::cout << "Check Descending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -262,23 +234,9 @@ void sort_by_firstname(std::string sort_by, std::string filename, std::vector<st
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name < temp_name2) {
                     //std::cout << "Check Ascending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -292,23 +250,9 @@ void sort_by_firstname(std::string sort_by, std::string filename, std::vector<st
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name > temp_name2) {
                     //std::cout << "Check Descending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -331,23 +275,9 @@ void sort_by_id(std::string sort_by, std::string filename, std::vector<student> 
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name < temp_name2) {
                     //std::cout << "Check Ascending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -361,23 +291,9 @@ void sort_by_id(std::string sort_by, std::string filename, std::vector<student> 
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name > temp_name2) {
                     //std::cout << "Check Descending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -399,8 +315,11 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
                 std::transform(temp_name.begin(),temp_name.end(), temp_name.begin(),::toupper);
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name < temp_name2) {
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                     //std::cout << "Check Ascending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
+                    /*temp.StudentID = students[i].StudentID;
                     temp.Surname = students[i].Surname;
                     temp.FirstName = students[i].FirstName;
                     temp.BirthDate = students[i].BirthDate;
@@ -416,7 +335,7 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
                     students[j].Surname = temp.Surname;
                     students[j].FirstName = temp.FirstName;
                     students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    students[j].Sex = temp.Sex; */
                 }
             }
         }
@@ -429,24 +348,9 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
                 std::transform(temp_name.begin(),temp_name.end(), temp_name.begin(),::toupper);
                 std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name > temp_name2) {
-                    //std::cout << "Check Descending" << std::endl; FOR DEBUGGING PURPOSES
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -466,23 +370,9 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
                 temp_answer = toupper(students[j].Sex[0]);
                 temp_answer2 = toupper(students[i].Sex[0]);
                 if(temp_answer < temp_answer2) {
-                    temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex;
+                    temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
                 }
             }
         }
@@ -492,24 +382,10 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
             for(int j = i+ 1; j < students.size(); j++) {
                 temp_answer = toupper(students[j].Sex[0]);
                 temp_answer2 = toupper(students[i].Sex[0]);
-                if(temp_answer != temp_answer2) {
-                    temp.StudentID = students[j].StudentID;
-                    temp.Surname = students[j].Surname;
-                    temp.FirstName = students[j].FirstName;
-                    temp.BirthDate = students[j].BirthDate;
-                    temp.Sex = students[j].Sex;
-
-                    students[j].StudentID = students[i].StudentID;
-                    students[j].Surname = students[i].Surname;
-                    students[j].FirstName = students[i].FirstName;
-                    students[j].BirthDate = students[i].BirthDate;
-                    students[j].Sex = students[i].Sex;
-
-                    students[i].StudentID = temp.StudentID;
-                    students[i].Surname = temp.Surname;
-                    students[i].FirstName = temp.FirstName;
-                    students[i].BirthDate = temp.BirthDate;
-                    students[i].Sex = temp.Sex;
+                if(temp_answer != temp_answer2) { // temp -> j; j -> i; i -> temp
+                    temp = students[j];
+                    students[j] = students[i];
+                    students[i] = temp;
                 }
             }
         }
