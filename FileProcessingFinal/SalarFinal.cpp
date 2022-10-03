@@ -318,24 +318,6 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
                     temp = students[i];
                     students[i] = students[j];
                     students[j] = temp;
-                    //std::cout << "Check Ascending" << std::endl; FOR DEBUGGING PURPOSES
-                    /*temp.StudentID = students[i].StudentID;
-                    temp.Surname = students[i].Surname;
-                    temp.FirstName = students[i].FirstName;
-                    temp.BirthDate = students[i].BirthDate;
-                    temp.Sex = students[i].Sex;
-
-                    students[i].StudentID = students[j].StudentID;
-                    students[i].Surname = students[j].Surname;
-                    students[i].FirstName = students[j].FirstName;
-                    students[i].BirthDate = students[j].BirthDate;
-                    students[i].Sex = students[j].Sex;
-
-                    students[j].StudentID = temp.StudentID;
-                    students[j].Surname = temp.Surname;
-                    students[j].FirstName = temp.FirstName;
-                    students[j].BirthDate = temp.BirthDate;
-                    students[j].Sex = temp.Sex; */
                 }
             }
         }
@@ -394,19 +376,72 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
     save_exit(filename, students);
 }
 
+void filter(std::string answer, std::vector<student> students) {
+    char choice = toupper(answer[0]);
+    if(choice == 'S') {
+        system("cls");
+        std::cout << "---------\n";
+        std::cout << "Surname\t|\n";
+        std::cout << "---------\n";
+        for (int i = 0; i < students.size(); i++) {
+            std::cout << students[i].Surname << "\t|\n";
+        }
+    }
+    else if(choice == 'F') {
+        system("cls");
+        std::cout << "-----------------\n";
+        std::cout << "Firstname\t|\n";
+        std::cout << "-----------------\n";
+        for (int i = 0; i < students.size(); i++) {
+            std::cout << students[i].FirstName << "\t|\n";
+        }
+    }
+    else if(choice == 'I') {
+        system("cls");
+        std::cout << "-----------------\n";
+        std::cout << "Student ID\t|\n";
+        std::cout << "-----------------\n";
+        for (int i = 0; i < students.size(); i++) {
+            std::cout << students[i].StudentID << "\t|\n";
+        }
+    }
+    else if(choice == 'B') {
+        system("cls");
+        std::cout << "-----------------\n";
+        std::cout << "Birth Date\t|\n";
+        std::cout << "-----------------\n";
+        for (int i = 0; i < students.size(); i++) {
+            std::cout << students[i].BirthDate << "\t|\n";
+        }
+    }
+    else if(choice == 'X') {
+        system("cls");
+        std::cout << "---------\n";
+        std::cout << "Sex\t|\n";
+        std::cout << "---------\n";
+        for (int i = 0; i < students.size(); i++) {
+            std::cout << students[i].Sex << "\t|\n";
+        }
+    }
+    else {
+        std::cout << "Invalid choice";
+    }
+}
+
 int main() {
     bool flag = false;
     bool flag2 = true;
     system("CLS");
     int answer1;
     int answer2;
+    std::string answer3;
     std::string sort_by;
     std::string sort_by2;
     std::string ID;
     std::string filename;
     std::vector<student> students;
     do {
-        system("cls");
+        //system("cls");
         std::cout << "[1] Create New File [2] Open an Existing File [3] Exit\n";
         std::cout << "Answer: ";
         std::cin >> answer1;
@@ -422,7 +457,7 @@ int main() {
             std::cin >> filename;
             if(open_existing_file(filename, students)== true) {
                 do {
-                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Save [6] Exit Without Saving\n";
+                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Filter [6] Save [7] Exit Without Saving\n";
                     std::cout << "Answer: ";
                     std::cin >> answer2;
                     switch(answer2) {
@@ -482,12 +517,18 @@ int main() {
                         break;
 
                     case 5:
+                        std::cout << "Select Category you want to print. [S]urname [F]irstname [I]D [B]irthdate Se[X]: ";
+                        std::cin >> answer3;
+                        filter(answer3, students);
+                        break;
+                    case 6:
                         save_exit(filename, students);
                         flag = false;
                         break;
 
-                    case 6:
+                    case 7:
                         exit(0);
+                        flag = false;
                         break;
 
                     default:
