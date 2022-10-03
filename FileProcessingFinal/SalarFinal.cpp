@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <unistd.h>
 
 struct student {
     std::string StudentID;
@@ -14,6 +15,35 @@ struct student {
     std::string BirthDate;
     std::string Sex;
 };
+
+std::string truncate(std::string &str, size_t width) {
+    int current_length = str.length();
+    int add_whitespace;
+    if(current_length > width) {
+        std::cout << "Input exceeds the limit and is being truncated.\n";
+        str = str.substr(0, width);
+    }
+    else
+        add_whitespace = width - current_length;
+        for(int i = 0; i < add_whitespace; i++) {
+            str += " ";
+        }
+    return str;
+}
+
+bool id_checker(std::string id, std::vector<student> &students) {
+    bool flag = false;
+    for(int i = 0; i < students.size(); i++) {
+        if(id != students[i].StudentID) {
+            flag = true;
+        }
+        else {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
 
 //checks if a text file has no data
 bool is_empty(std::ifstream &file) {
@@ -27,9 +57,9 @@ void show(std::string filename) {
     file.open(filename);
     if(file.is_open()) {
         std::cout << "Active File: " << filename << std::endl;
-        std::cout << "-----------------------------------------------------------------------\n";
-        std::cout << "Student ID\tSurname\tFirstname\tBirthDate\tSex\n";
-        std::cout << "-----------------------------------------------------------------------\n";
+        std::cout << "-------------------------------------------------------------------------------------\n";
+        std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
+        std::cout << "-------------------------------------------------------------------------------------\n";
         std::cout << file.rdbuf();
     }
 }
@@ -66,39 +96,58 @@ void save_exit(std::string filename, std::vector<student> &students) {
 //adds a student to the list of students
 void add_student(std::string filename, std::vector<student> &students) {
     student temp;       //temporarily stores the data in this variable
-
+    std::string temp_firstname;
+    std::string temp_lastname;
     std::cin.ignore();
     std::cout << "Student ID: ";
     std::getline(std::cin, temp.StudentID);
-    std::cout << "Surname: ";
+    truncate(temp.StudentID,10);
+
+    std::cout << "New Surname: ";
     std::getline(std::cin, temp.Surname);
-    std::cout << "Firstname: ";
+    temp_lastname = temp.Surname;
+    truncate(temp.Surname,20);
+    std::cout << "New Firstname: ";
     std::getline(std::cin, temp.FirstName);
-    std::cout << "Birthdate: ";
+    temp_firstname = temp.FirstName;
+    truncate(temp.FirstName,20);
+    std::cout << "New Birthdate: ";
     std::getline(std::cin, temp.BirthDate);
-    std::cout << "Sex: ";
+    truncate(temp.BirthDate,10);
+    std::cout << "New Sex: ";
     std::getline(std::cin, temp.Sex);
+    truncate(temp.Sex,1);
 
     students.push_back(temp); //pushes temp to the vector
     save_exit(filename, students);
+    std::cout << "Successfully added " << temp_lastname << ", " << temp_firstname << " to the record.\n";
 }
 
 //edits the data of a specific student inside the text file
 void edit_record(std::string ID, std::vector<student> &students, std::string filename) {
     student temp;
+    std::string temp_firstname;
+    std::string temp_lastname;
     for(int i = 0; i < students.size(); i++) {
         if(ID == students[i].StudentID) {
             std::cin.ignore();
             std::cout << "New Student ID: ";
             std::getline(std::cin, temp.StudentID);
+            truncate(temp.StudentID,10);
             std::cout << "New Surname: ";
             std::getline(std::cin, temp.Surname);
+            temp_lastname = temp.Surname;
+            truncate(temp.Surname,20);
             std::cout << "New Firstname: ";
             std::getline(std::cin, temp.FirstName);
+            temp_firstname = temp.FirstName;
+            truncate(temp.FirstName,20);
             std::cout << "New Birthdate: ";
             std::getline(std::cin, temp.BirthDate);
+            truncate(temp.BirthDate,10);
             std::cout << "New Sex: ";
             std::getline(std::cin, temp.Sex);
+            truncate(temp.Sex,1);
 
             students[i].StudentID = temp.StudentID;
             students[i].Surname = temp.Surname;
@@ -108,6 +157,7 @@ void edit_record(std::string ID, std::vector<student> &students, std::string fil
         }
     }
     save_exit(filename, students);
+    std::cout << "Successfully edited the record.\n";
 }
 
 //deletes all the data of a specific student in the text file
@@ -431,7 +481,8 @@ void filter(std::string answer, std::vector<student> students) {
 int main() {
     bool flag = false;
     bool flag2 = true;
-    system("CLS");
+    //sleep(2);
+    //system("CLS");
     int answer1;
     int answer2;
     std::string answer3;
@@ -441,6 +492,7 @@ int main() {
     std::string filename;
     std::vector<student> students;
     do {
+        //sleep(2);
         //system("cls");
         std::cout << "[1] Create New File [2] Open an Existing File [3] Exit\n";
         std::cout << "Answer: ";
@@ -453,6 +505,7 @@ int main() {
             create_new_file(filename);
             break;
         case 2:
+            system("cls");
             std::cout << "Enter filename to open: ";
             std::cin >> filename;
             if(open_existing_file(filename, students)== true) {

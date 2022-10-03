@@ -1,2 +1,3 @@
-21-1-01027	Hungo	Melbert Jose	01-16-2002	M
-21-1-01034	Carabao	Alababa Ngooo	01-04-2005	F
+21-1-01025	Salar               	Clyde Xavier        	11-09-2002	M
+21-1-01069	Malinao             	Khenneth            	idkidkidk 	M
+21-1-01075	de los Reyes        	Rene Angelo         	idkidkidk 	M
