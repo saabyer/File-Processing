@@ -34,25 +34,6 @@ void show(std::string filename) {
     }
 }
 
-//adds a student to the list of students
-void add_student(std::vector<student> &students) {
-    student temp;       //temporarily stores the data in this variable
-
-    std::cin.ignore();
-    std::cout << "Student ID: ";
-    std::getline(std::cin, temp.StudentID);
-    std::cout << "Surname: ";
-    std::getline(std::cin, temp.Surname);
-    std::cout << "Firstname: ";
-    std::getline(std::cin, temp.FirstName);
-    std::cout << "Birthdate: ";
-    std::getline(std::cin, temp.BirthDate);
-    std::cout << "Sex: ";
-    std::getline(std::cin, temp.Sex);
-
-    students.push_back(temp); //pushes temp to the vector
-}
-
 //saves the data you want to add to the text file and exits the program
 void save_exit(std::string filename, std::vector<student> &students) {
     filename.append(".txt");
@@ -75,11 +56,31 @@ void save_exit(std::string filename, std::vector<student> &students) {
             }
         }
         file.close();
-        exit(0);
+        //exit(0);
     }
     else {
         std::cout << "File not found.\n";
     }
+}
+
+//adds a student to the list of students
+void add_student(std::string filename, std::vector<student> &students) {
+    student temp;       //temporarily stores the data in this variable
+
+    std::cin.ignore();
+    std::cout << "Student ID: ";
+    std::getline(std::cin, temp.StudentID);
+    std::cout << "Surname: ";
+    std::getline(std::cin, temp.Surname);
+    std::cout << "Firstname: ";
+    std::getline(std::cin, temp.FirstName);
+    std::cout << "Birthdate: ";
+    std::getline(std::cin, temp.BirthDate);
+    std::cout << "Sex: ";
+    std::getline(std::cin, temp.Sex);
+
+    students.push_back(temp); //pushes temp to the vector
+    save_exit(filename, students);
 }
 
 //edits the data of a specific student inside the text file
@@ -519,6 +520,7 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
 
 int main() {
     bool flag = false;
+    bool flag2 = true;
     system("CLS");
     int answer1;
     int answer2;
@@ -528,6 +530,7 @@ int main() {
     std::string filename;
     std::vector<student> students;
     do {
+        system("cls");
         std::cout << "[1] Create New File [2] Open an Existing File [3] Exit\n";
         std::cout << "Answer: ";
         std::cin >> answer1;
@@ -543,13 +546,13 @@ int main() {
             std::cin >> filename;
             if(open_existing_file(filename, students)== true) {
                 do {
-                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Save and Exit [6] Exit Without Saving\n";
+                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Save [6] Exit Without Saving\n";
                     std::cout << "Answer: ";
                     std::cin >> answer2;
                     switch(answer2) {
                     case 1:
                         system("cls");
-                        add_student(students);
+                        add_student(filename, students);
                         break;
 
                     case 2:
@@ -572,6 +575,8 @@ int main() {
                                 std::cout <<"Sorting Surname in [A]scending or [D]esceding order: ";
                                 std::cin >> sort_by2;
                                 sort_by_lastname(sort_by2, filename, students);
+                                break;
+
                             }
                             else if(toupper(sort_by[0])== 'F') {
                                 std::cout <<"Sorting First Name in [A]scending or [D]esceding order: ";
@@ -602,6 +607,7 @@ int main() {
 
                     case 5:
                         save_exit(filename, students);
+                        flag = false;
                         break;
 
                     case 6:
@@ -613,7 +619,7 @@ int main() {
                         std::cout << "Invalid Option";
                         break;
                     }
-                } while(answer2 != 4 || answer2 != 5);
+                } while(flag);
             break;
         }
         break;
