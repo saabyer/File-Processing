@@ -424,55 +424,71 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
     save_exit(filename, students);
 }
 
-void filter(std::string answer, std::vector<student> students) {
-    char choice = toupper(answer[0]);
-    if(choice == 'S') {
-        system("cls");
-        std::cout << "-------------------------\n";
-        std::cout << "\tSurname\t\t|\n";
-        std::cout << "-------------------------\n";
-        for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].Surname << "\t|\n";
+void filter(std::vector<student> &students, std::string &key, std::string category) {
+    int key_length = key.length();
+    std::vector<student> temp_students;
+    transform(key.begin(), key.end(), key.begin(), ::toupper);
+    student temp_student;
+    std::string temp_category;
+    if(toupper(category[0]) == 'S') {
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].Surname;
+            transform(temp_category.begin(), temp_category.end(), temp_category.begin(),::toupper);
+            if(key == temp_category.substr(0, key_length)) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
+            }
+        }
+        for(int j = 0; j < temp_students.size(); j++) {
+            std::cout << temp_students[j].StudentID << "\t";
+            std::cout << temp_students[j].Surname << "\t";
+            std::cout << temp_students[j].FirstName << "\t";
+            std::cout << temp_students[j].BirthDate << "\t";
+            std::cout << temp_students[j].Sex << "\n";
         }
     }
-    else if(choice == 'F') {
-        system("cls");
-        std::cout << "-------------------------\n";
-        std::cout << "\tFirstname\t|\n";
-        std::cout << "-------------------------\n";
-        for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].FirstName << "\t|\n";
+    else if (toupper(category[0]) == 'F') {
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].FirstName;
+            transform(temp_category.begin(), temp_category.end(), temp_category.begin(),::toupper);
+            if(key == temp_category.substr(0, key_length)) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
+            }
+        }
+        for(int j = 0; j < temp_students.size(); j++) {
+            std::cout << temp_students[j].StudentID << "\t";
+            std::cout << temp_students[j].Surname << "\t";
+            std::cout << temp_students[j].FirstName << "\t";
+            std::cout << temp_students[j].BirthDate << "\t";
+            std::cout << temp_students[j].Sex << "\n";
         }
     }
-    else if(choice == 'I') {
-        system("cls");
-        std::cout << "-------------------------\n";
-        std::cout << "\tStudent ID\t|\n";
-        std::cout << "-------------------------\n";
-        for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].StudentID << "\t\t|\n";
+    else if (toupper(category[0]) == 'I') {
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].StudentID;
+            transform(temp_category.begin(), temp_category.end(), temp_category.begin(),::toupper);
+            if(key == temp_category.substr(0, key_length)) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
+            }
+        }
+        for(int j = 0; j < temp_students.size(); j++) {
+            std::cout << temp_students[j].StudentID << "\t";
+            std::cout << temp_students[j].Surname << "\t";
+            std::cout << temp_students[j].FirstName << "\t";
+            std::cout << temp_students[j].BirthDate << "\t";
+            std::cout << temp_students[j].Sex << "\n";
         }
     }
-    else if(choice == 'B') {
-        system("cls");
-        std::cout << "-------------------------\n";
-        std::cout << "\tBirth Date\t|\n";
-        std::cout << "-------------------------\n";
-        for (int i = 0; i < students.size(); i++) {
-            std::cout << students[i].BirthDate << "\t\t|\n";
-        }
+    else if (toupper(category[0]) == 'B') {
+
     }
-    else if(choice == 'X') {
-        system("cls");
-        std::cout << "-------------------------\n";
-        std::cout << "\tSex\t\t|\n";
-        std::cout << "-------------------------\n";
-        for (int i = 0; i < students.size(); i++) {
-            std::cout <<"\t"<< students[i].Sex << "\t\t|\n";
-        }
+    else if (toupper(category[0]) == 'X') {
+
     }
     else {
-        std::cout << "Invalid choice";
+        std::cout << "Invalid Option!\n";
     }
 }
 
@@ -488,6 +504,7 @@ int main() {
     std::string sort_by2;
     std::string ID;
     std::string filename;
+    std::string key;
     std::vector<student> students;
     do {
         //sleep(2);
@@ -568,9 +585,12 @@ int main() {
                         break;
 
                     case 5:
-                        std::cout << "Select Category you want to print. [S]urname [F]irstname [I]D [B]irthdate Se[X]: ";
+                        std::cout << "Select Category to filter [S]urname [F]irstname [I]D [B]irthdate Se[X]: ";
                         std::cin >> answer3;
-                        filter(answer3, students);
+                        std::cout << "Enter keyword: ";
+                        std::cin >> key;
+                        filter(students, key, answer3);
+                        //filter(answer3, students);
                         break;
                     case 6:
                         save_exit(filename, students);
