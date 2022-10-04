@@ -362,8 +362,6 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
             for(int j = i+ 1; j < students.size(); j++) {
                 temp_name = students[j].BirthDate;
                 temp_name2 = students[i].BirthDate;
-                std::transform(temp_name.begin(),temp_name.end(), temp_name.begin(),::toupper);
-                std::transform(temp_name2.begin(),temp_name2.end(), temp_name2.begin(),::toupper);
                 if(temp_name < temp_name2) {
                     temp = students[i];
                     students[i] = students[j];
