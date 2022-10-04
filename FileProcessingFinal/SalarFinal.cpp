@@ -482,10 +482,36 @@ void filter(std::vector<student> &students, std::string &key, std::string catego
         }
     }
     else if (toupper(category[0]) == 'B') {
-
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].StudentID;
+            if(key == temp_category) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
+            }
+        }
+        for(int j = 0; j < temp_students.size(); j++) {
+            std::cout << temp_students[j].StudentID << "\t";
+            std::cout << temp_students[j].Surname << "\t";
+            std::cout << temp_students[j].FirstName << "\t";
+            std::cout << temp_students[j].BirthDate << "\t";
+            std::cout << temp_students[j].Sex << "\n";
+        }
     }
     else if (toupper(category[0]) == 'X') {
-
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].Sex;
+            if(toupper(key[0]) == temp_category[0]) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
+            }
+        }
+        for(int j = 0; j < temp_students.size(); j++) {
+            std::cout << temp_students[j].StudentID << "\t";
+            std::cout << temp_students[j].Surname << "\t";
+            std::cout << temp_students[j].FirstName << "\t";
+            std::cout << temp_students[j].BirthDate << "\t";
+            std::cout << temp_students[j].Sex << "\n";
+        }
     }
     else {
         std::cout << "Invalid Option!\n";
