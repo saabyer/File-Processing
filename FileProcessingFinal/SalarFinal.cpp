@@ -434,7 +434,7 @@ void filter(std::vector<student> &students, std::string category) {
     student temp_student;
     std::vector<student> temp_students;
     transform(key.begin(), key.end(), key.begin(), ::toupper);
-        if(toupper(category[0]) == 'S') {
+    if(toupper(category[0]) == 'S') {
         for(int i = 0; i < students.size(); i++) {
             temp_category = students[i].Surname;
             transform(temp_category.begin(), temp_category.end(), temp_category.begin(),::toupper);
@@ -443,23 +443,6 @@ void filter(std::vector<student> &students, std::string category) {
                 temp_students.push_back(temp_student);
             }
         }
-        if(temp_students.size() != 0) {
-        system("cls");
-        std::cout << "-------------------------------------------------------------------------------------\n";
-        std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
-        std::cout << "-------------------------------------------------------------------------------------\n";
-            for(int j = 0; j < temp_students.size(); j++) {
-                std::cout << temp_students[j].StudentID << "\t";
-                std::cout << temp_students[j].Surname << "\t";
-                std::cout << temp_students[j].FirstName << "\t";
-                std::cout << temp_students[j].BirthDate << "\t";
-                std::cout << temp_students[j].Sex << "\n";
-            }
-        }
-        else {
-            std::cout << "Nothing found using keyword " << key << ".\n";
-        }
-
     }
     else if (toupper(category[0]) == 'F') {
         for(int i = 0; i < students.size(); i++) {
@@ -470,22 +453,7 @@ void filter(std::vector<student> &students, std::string category) {
                 temp_students.push_back(temp_student);
             }
         }
-        if(temp_students.size() != 0) {
-        system("cls");
-        std::cout << "-------------------------------------------------------------------------------------\n";
-        std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
-        std::cout << "-------------------------------------------------------------------------------------\n";
-            for(int j = 0; j < temp_students.size(); j++) {
-                std::cout << temp_students[j].StudentID << "\t";
-                std::cout << temp_students[j].Surname << "\t";
-                std::cout << temp_students[j].FirstName << "\t";
-                std::cout << temp_students[j].BirthDate << "\t";
-                std::cout << temp_students[j].Sex << "\n";
-            }
-        }
-        else {
-            std::cout << "Nothing found using keyword " << key << ".\n";
-        }
+
     }
     else if (toupper(category[0]) == 'I') {
         for(int i = 0; i < students.size(); i++) {
@@ -496,21 +464,14 @@ void filter(std::vector<student> &students, std::string category) {
                 temp_students.push_back(temp_student);
             }
         }
-        if(temp_students.size() != 0) {
-        system("cls");
-        std::cout << "-------------------------------------------------------------------------------------\n";
-        std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
-        std::cout << "-------------------------------------------------------------------------------------\n";
-            for(int j = 0; j < temp_students.size(); j++) {
-                std::cout << temp_students[j].StudentID << "\t";
-                std::cout << temp_students[j].Surname << "\t";
-                std::cout << temp_students[j].FirstName << "\t";
-                std::cout << temp_students[j].BirthDate << "\t";
-                std::cout << temp_students[j].Sex << "\n";
+    }
+    else if (toupper(category[0]) == 'X') {
+        for(int i = 0; i < students.size(); i++) {
+            temp_category = students[i].Sex;
+            if(toupper(key[0]) == temp_category[0]) {
+                temp_student = students[i];
+                temp_students.push_back(temp_student);
             }
-        }
-        else {
-            std::cout << "Nothing found using keyword " << key << ".\n";
         }
     }
     else if (toupper(category[0]) == 'B') {
@@ -530,7 +491,8 @@ void filter(std::vector<student> &students, std::string category) {
         else if(birthday_answer2== 'M') {
             for(int i = 0; i < students.size(); i++) {
             temp_category = students[i].BirthDate;
-            if(key == temp_category.substr(0, 1)) {
+            std::cout << temp_category.substr(0,2) << "\n";
+            if(key == temp_category.substr(0, 2)) {
                 temp_student = students[i];
                 temp_students.push_back(temp_student);
                 }
@@ -539,7 +501,7 @@ void filter(std::vector<student> &students, std::string category) {
         else if(birthday_answer2== 'D') {
             for(int i = 0; i < students.size(); i++) {
             temp_category = students[i].BirthDate;
-            if(key == temp_category.substr(3, 4)) {
+            if(key == temp_category.substr(3,2)) {
                 temp_student = students[i];
                 temp_students.push_back(temp_student);
                 }
@@ -550,15 +512,10 @@ void filter(std::vector<student> &students, std::string category) {
         }
 
     }
-    else if (toupper(category[0]) == 'X') {
-        for(int i = 0; i < students.size(); i++) {
-            temp_category = students[i].Sex;
-            if(toupper(key[0]) == temp_category[0]) {
-                temp_student = students[i];
-                temp_students.push_back(temp_student);
-            }
-        }
-        if(temp_students.size() != 0) {
+    else {
+        std::cout << "Invalid Option!\n";
+    }
+    if(temp_students.size() != 0) {
         system("cls");
         std::cout << "-------------------------------------------------------------------------------------\n";
         std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
@@ -571,19 +528,14 @@ void filter(std::vector<student> &students, std::string category) {
                 std::cout << temp_students[j].Sex << "\n";
             }
         }
-        else {
-            std::cout << "Nothing found using keyword " << key << ".\n";
-        }
-    }
     else {
-        std::cout << "Invalid Option!\n";
+        std::cout << "Nothing found using keyword " << key << ".\n";
     }
 }
 
 int main() {
     bool flag = false;
     bool flag2 = true;
-    //sleep(2);
     //system("CLS");
     int answer1;
     int answer2;
