@@ -7,6 +7,8 @@
 #include <vector>
 #include <algorithm>
 #include <unistd.h>
+#include <filesystem>
+#include <dirent.h>
 
 struct student {
     std::string StudentID;
@@ -16,6 +18,26 @@ struct student {
     std::string Sex;
 };
 
+//prints the filenames of all the files and folder in the directory
+void show_directory() {
+    struct dirent *d;
+    DIR *dr;
+    dr = opendir(".");
+    if(dr!=NULL)
+    {
+        std::cout<<"List of Files & Folders in current directory: \n";
+        for(d=readdir(dr); d!=NULL; d=readdir(dr))
+        {
+            std::cout<<d->d_name<<std::endl;
+        }
+        closedir(dr);
+    }
+    else
+        std::cout<<"\nError Occurred!";
+    std::cout<<std::endl;
+}
+
+//truncates string names
 std::string truncate(std::string &str, size_t width) {
     int current_length = str.length();
     int add_whitespace;
@@ -31,6 +53,7 @@ std::string truncate(std::string &str, size_t width) {
     return str;
 }
 
+//checks if ID inputted by the user is unique
 bool id_checker(std::string id, std::vector<student> &students) {
     bool flag = false;
     for(int i = 0; i < students.size(); i++) {
@@ -60,7 +83,7 @@ void show(std::string filename) {
         std::cout << "-------------------------------------------------------------------------------------\n";
         std::cout << "Student ID\tSurname             \tFirstname          \tBirthDate\tSex\n";
         std::cout << "-------------------------------------------------------------------------------------\n";
-        std::cout << file.rdbuf();
+        std::cout << file.rdbuf()<< "\n";
     }
 }
 
@@ -86,7 +109,6 @@ void save_exit(std::string filename, std::vector<student> &students) {
             }
         }
         file.close();
-        //exit(0);
     }
     else {
         std::cout << "File not found.\n";
@@ -124,10 +146,9 @@ void add_student(std::string filename, std::vector<student> &students) {
 }
 
 //edits the data of a specific student inside the text file
-void edit_record(std::string ID, std::vector<student> &students, std::string filename) {
+bool edit_record(std::string ID, std::vector<student> &students, std::string filename) {
     student temp;
-    std::string temp_firstname;
-    std::string temp_lastname;
+    bool flag = false;
     for(int i = 0; i < students.size(); i++) {
         if(ID == students[i].StudentID) {
             std::cin.ignore();
@@ -136,11 +157,9 @@ void edit_record(std::string ID, std::vector<student> &students, std::string fil
             truncate(temp.StudentID,10);
             std::cout << "New Surname: ";
             std::getline(std::cin, temp.Surname);
-            temp_lastname = temp.Surname;
             truncate(temp.Surname,20);
             std::cout << "New Firstname: ";
             std::getline(std::cin, temp.FirstName);
-            temp_firstname = temp.FirstName;
             truncate(temp.FirstName,20);
             std::cout << "New Birthdate: ";
             std::getline(std::cin, temp.BirthDate);
@@ -149,15 +168,17 @@ void edit_record(std::string ID, std::vector<student> &students, std::string fil
             std::getline(std::cin, temp.Sex);
             truncate(temp.Sex,1);
 
-            students[i].StudentID = temp.StudentID;
-            students[i].Surname = temp.Surname;
-            students[i].FirstName = temp.FirstName;
-            students[i].BirthDate = temp.BirthDate;
-            students[i].Sex = temp.Sex;
+            students[i] = temp;
+            save_exit(filename, students);
+            flag = true;
+            break;
+            std::cout << "Successfully edited the record.\n";
         }
     }
-    save_exit(filename, students);
-    std::cout << "Successfully edited the record.\n";
+    if(flag == false) {
+        std::cout << "No student found with that ID.\n";
+    }
+    return flag;
 }
 
 //deletes all the data of a specific student in the text file
@@ -168,6 +189,7 @@ void delete_record(std::string ID, std::vector<student> &students, std::string f
             temp.FirstName = students[i].FirstName;
             temp.Surname = students[i].Surname;
             students.erase(students.begin() + i);
+            system("cls");
             std::cout << "Successfully deleted " << temp.Surname << ", " <<
             temp.FirstName << "'s record.\n";
         }
@@ -266,7 +288,7 @@ void sort_by_lastname(std::string sort_by, std::string filename, std::vector<stu
             }
         }
     }
-    //print_vector(students);
+    system("cls");
     save_exit(filename, students);
 }
 
@@ -307,7 +329,7 @@ void sort_by_firstname(std::string sort_by, std::string filename, std::vector<st
             }
         }
     }
-    //print_vector(students);
+    system("cls");
     save_exit(filename, students);
 }
 
@@ -348,7 +370,7 @@ void sort_by_id(std::string sort_by, std::string filename, std::vector<student> 
             }
         }
     }
-    //print_vector(students);
+    system("cls");
     save_exit(filename, students);
 }
 
@@ -385,7 +407,7 @@ void sort_by_birthdate(std::string sort_by, std::string filename, std::vector<st
             }
         }
     }
-    //print_vector(students);
+    system("cls");
     save_exit(filename, students);
 }
 
@@ -420,7 +442,7 @@ void sort_by_sex(std::string sort_by, std::string filename, std::vector<student>
             }
         }
     }
-    //print_vector(students);
+    system("cls");
     save_exit(filename, students);
 }
 
@@ -489,10 +511,11 @@ void filter(std::vector<student> &students, std::string category) {
             }
         }
         else if(birthday_answer2== 'M') {
+            std::cout << "Check birthday 2\n";
             for(int i = 0; i < students.size(); i++) {
             temp_category = students[i].BirthDate;
-            std::cout << temp_category.substr(0,2) << "\n";
             if(key == temp_category.substr(0, 2)) {
+                std::cout << "Check birthday 2\n";
                 temp_student = students[i];
                 temp_students.push_back(temp_student);
                 }
@@ -536,7 +559,6 @@ void filter(std::vector<student> &students, std::string category) {
 int main() {
     bool flag = false;
     bool flag2 = true;
-    //system("CLS");
     int answer1;
     int answer2;
     std::string answer3;
@@ -547,8 +569,7 @@ int main() {
     std::string key;
     std::vector<student> students;
     do {
-        //sleep(2);
-        //system("cls");
+        system("cls");
         std::cout << "[1] Create New File [2] Open an Existing File [3] Exit\n";
         std::cout << "Answer: ";
         std::cin >> answer1;
@@ -561,29 +582,36 @@ int main() {
             break;
         case 2:
             system("cls");
-            std::cout << "Enter filename to open: ";
+            show_directory();
+            std::cout << "Enter name of text file to open(don't include extension name '.txt'): ";
             std::cin >> filename;
             if(open_existing_file(filename, students)== true) {
                 do {
-                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Filter [6] Save [7] Exit Without Saving\n";
+                    std::cout << "\n[1] Add [2] Edit [3] Delete [4] Sort [5] Filter [6] Save [7] Go Back\n";
                     std::cout << "Answer: ";
                     std::cin >> answer2;
                     switch(answer2) {
                     case 1:
                         system("cls");
                         add_student(filename, students);
+                        flag = true;
+                        open_existing_file(filename, students);
                         break;
 
                     case 2:
                         std::cout << "Enter ID of the student you want to edit: ";
                         std::cin >> ID;
                         edit_record(ID,students, filename);
+                        system("cls");
+                        flag = open_existing_file(filename, students);
                         break;
 
                     case 3:
                         std::cout << "Enter ID of the student you want to delete: ";
                         std::cin >> ID;
                         delete_record(ID, students, filename);
+                        open_existing_file(filename, students);
+                        flag = true;
                         break;
 
                     case 4:
@@ -594,6 +622,8 @@ int main() {
                                 std::cout <<"Sorting Surname in [A]scending or [D]esceding order: ";
                                 std::cin >> sort_by2;
                                 sort_by_lastname(sort_by2, filename, students);
+                                open_existing_file(filename, students);
+                                flag2 = false;
                                 break;
 
                             }
@@ -601,48 +631,57 @@ int main() {
                                 std::cout <<"Sorting First Name in [A]scending or [D]esceding order: ";
                                 std::cin >> sort_by2;
                                 sort_by_firstname(sort_by2, filename, students);
+                                open_existing_file(filename, students);
+                                flag2 = false;
                             }
                             else if (toupper(sort_by[0])== 'I'){
                                 std::cout <<"Sorting Student ID in [A]scending or [D]esceding order: ";
                                 std::cin >> sort_by2;
                                 sort_by_id(sort_by2, filename, students);
+                                open_existing_file(filename, students);
+                                flag2 = false;
                             }
                             else if (toupper(sort_by[0])== 'B'){
                                 std::cout <<"Sorting Birth Date in [A]scending or [D]esceding order: ";
                                 std::cin >> sort_by2;
                                 sort_by_birthdate(sort_by2, filename, students);
+                                open_existing_file(filename, students);
+                                flag2 = false;
                             }
                             else if (toupper(sort_by[0])== 'X'){
                                 std::cout <<"Sorting Sex in [M]ale first or [F]emale first: ";
                                 std::cin >> sort_by2;
                                 sort_by_sex(sort_by2, filename, students);
+                                open_existing_file(filename, students);
+                                flag2 = false;
                             }
                             else {
                                 std::cout <<"Invalid Option!\n";
-                                flag = true;
+                                flag2 = true;
                             }
-                        }while(flag);
+                        }while(flag2);
+                        flag = true;
                         break;
 
                     case 5:
                         std::cout << "Select Category to filter [S]urname [F]irstname [I]D [B]irthdate Se[X]: ";
                         std::cin >> answer3;
                         filter(students, answer3);
-                        //filter(answer3, students);
+                        flag = true;
                         break;
                     case 6:
                         save_exit(filename, students);
-                        flag = false;
+                        flag = true;
                         break;
 
                     case 7:
-                        exit(0);
                         flag = false;
                         break;
 
                     default:
                         system("CLS");
                         std::cout << "Invalid Option";
+                        flag = true;
                         break;
                     }
                 } while(flag);
@@ -653,7 +692,7 @@ int main() {
             exit(0);
             break;
         default:
-            system("CLS");
+            system("cls");
             std::cout << "Invalid Option!\n";
             break;
         }
