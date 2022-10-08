@@ -40,7 +40,6 @@ I already created an existing file called sample.txt that has data in it so we c
 
 Since it currently has only two students, we can add more.
 
-![alt text]()
 
 ***
 
