@@ -13,12 +13,12 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
 
 ## Creating a text file
 
-
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/1.png)
 <!-- add image typing hehe -->
  After hitting the enter button, it will create a text file called hehe.txt
  <!---
  Add image of directory text file
--->
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/2.png)
 
  ## Opening An Existing Text File
  ***
@@ -27,32 +27,46 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
  As you can see, since we just created the file earlier, it says that there is no data currently. 
  <!-- add image showing no data currently-->
  
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/3.png)
+
 I already created an existing file called sample.txt that has data in it so we can try to open it.
 
   After opening a file that has data inside it, it will display the contents of the file like this.
 
 Since it currently has only two students, we can add more.
 
- 
-
-
-
 
 ### Adding Students
 
 Supply the neccessary information so that you can add the student and save it to the text file.
  <!--add image showing two students-->
+-->![alt text]()
+
 
 We can always add more
 <!-- add 2 image showing adding students and many students -->
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
+
+
+
 
 ### Editing 
 
 You can edit by supplying the Student ID of the student you want to edit
 <!-- add image showing edit-->
 
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
+
+
+
 As you can see, the information that is shown is now different after the edit is done.
 <!-- add after edit image-->
+
+
+
 
 ### Deleting
 
@@ -60,6 +74,14 @@ You can also delete all the data of a certain student by.
 Just enter the Student ID of the student you want to delete.
 
 <!--show 2 images before and after delete image-->
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.2.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.3.png)
+
+
+
+
+
 ***
 
 ## Sorting
@@ -73,6 +95,11 @@ An example of sorting by Surname in Ascending order.
 
 <!-- Show before and after image of sorting image-->
 
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.2.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.3.png)
+
+
 
 You can also try it with other categories
 
@@ -85,6 +112,12 @@ You can also use filter to filter out the students you want to display.
 Entering the category and keyword so that it will only display the student that satisfies the requirements.
 
 <!-- show example of sort-->
+
+-->![alt text]()
+-->![alt text]()
+-->![alt text]()
+
+
 
 
 
