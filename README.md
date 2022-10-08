@@ -43,29 +43,28 @@ Supply the neccessary information so that you can add the student and save it to
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.2.png)
+
+
 We can always add more
+
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
 
-
-
-
 ### Editing 
 
-You can edit by supplying the Student ID of the student you want to edit
+You can edit by supplying the Student ID of the student you want to edit.
 
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
+
+After hitting the Enter button the data will no change.
+
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
 
 
-
 As you can see, the information that is shown is now different after the edit is done.
-
-
-
 
 
 ### Deleting
@@ -75,6 +74,9 @@ Just enter the Student ID of the student you want to delete.
 
 <!--show 2 images before and after delete image-->
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.png)
+
+After hitting the Enter button, the data of the student will be deleted in the interface and text file.
+
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.2.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.3.png)
 
@@ -115,6 +117,9 @@ Entering the category and keyword so that it will only display the student that 
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.2.png)
+
+As you can see, the text file is still the same since you are only changing the display of the interface.
+
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.3.png)
 
 
