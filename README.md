@@ -14,18 +14,17 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
 ## Creating a text file
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/1.png)
-<!-- add image typing hehe -->
+
  After hitting the enter button, it will create a text file called hehe.txt
- <!---
- Add image of directory text file
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/2.png)
+ 
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/2.png)
 
  ## Opening An Existing Text File
  ***
  After creating the file you can now open it. 
  As you can see, when trying to open an existing file, it will display all the files and folders in your current directory.
  As you can see, since we just created the file earlier, it says that there is no data currently. 
- <!-- add image showing no data currently-->
+
  
 -->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/3.png)
 
@@ -39,8 +38,6 @@ Since it currently has only two students, we can add more.
 ### Adding Students
 
 Supply the neccessary information so that you can add the student and save it to the text file.
- <!--add image showing two students-->
--->![alt text]()
 
 
 We can always add more
