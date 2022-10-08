@@ -54,16 +54,16 @@ We can always add more
 ### Editing 
 
 You can edit by supplying the Student ID of the student you want to edit
-<!-- add image showing edit-->
 
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
+
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
 
 
 
 As you can see, the information that is shown is now different after the edit is done.
-<!-- add after edit image-->
+
 
 
 
@@ -74,9 +74,9 @@ You can also delete all the data of a certain student by.
 Just enter the Student ID of the student you want to delete.
 
 <!--show 2 images before and after delete image-->
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.2.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.3.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.2.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.3.png)
 
 
 
@@ -95,9 +95,9 @@ An example of sorting by Surname in Ascending order.
 
 <!-- Show before and after image of sorting image-->
 
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.2.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.3.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.2.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/7.3.png)
 
 
 
@@ -113,9 +113,9 @@ Entering the category and keyword so that it will only display the student that 
 
 <!-- show example of sort-->
 
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.2.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.3.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.2.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.3.png)
 
 
 
