@@ -16,7 +16,7 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/create_file.png)
 
 
-  ####After hitting the enter button, it will create a text file called hehe.txt
+  #### After hitting the enter button, it will create a text file called hehe.txt
   
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/success_create.png)
