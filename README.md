@@ -38,6 +38,10 @@ I already created an existing file called sample.txt that has data in it so we c
   
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/opened_file.png)
 
+Since it currently has only two students, we can add more.
+
+![alt text]()
+
 ***
 
 
