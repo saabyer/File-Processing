@@ -22,11 +22,13 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
  ## Opening An Existing Text File
  ***
  After creating the file you can now open it. 
+
  As you can see, when trying to open an existing file, it will display all the files and folders in your current directory.
+
  As you can see, since we just created the file earlier, it says that there is no data currently. 
 
  
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/3.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/3.png)
 
 I already created an existing file called sample.txt that has data in it so we can try to open it.
 
@@ -41,9 +43,9 @@ Supply the neccessary information so that you can add the student and save it to
 
 
 We can always add more
-<!-- add 2 image showing adding students and many students -->
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
--->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
+
+[alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
+[alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
 
 
 
