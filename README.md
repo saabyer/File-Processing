@@ -41,11 +41,12 @@ Since it currently has only two students, we can add more.
 
 Supply the neccessary information so that you can add the student and save it to the text file.
 
-
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.2.png)
 We can always add more
 
-[alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
-[alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.png)
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/4.2.png)
 
 
 
