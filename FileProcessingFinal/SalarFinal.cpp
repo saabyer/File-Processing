@@ -75,6 +75,7 @@ bool is_empty(std::ifstream &file) {
 
 //prints all the data inside a text file
 void show(std::string filename) {
+    system("cls");
     filename.append(".txt");
     std::ifstream file;
     file.open(filename);
@@ -125,18 +126,18 @@ void add_student(std::string filename, std::vector<student> &students) {
     std::getline(std::cin, temp.StudentID);
     truncate(temp.StudentID,10);
 
-    std::cout << "New Surname: ";
+    std::cout << "Surname: ";
     std::getline(std::cin, temp.Surname);
     temp_lastname = temp.Surname;
     truncate(temp.Surname,20);
-    std::cout << "New Firstname: ";
+    std::cout << "Firstname: ";
     std::getline(std::cin, temp.FirstName);
     temp_firstname = temp.FirstName;
     truncate(temp.FirstName,20);
-    std::cout << "New Birthdate: ";
+    std::cout << "Birthdate: ";
     std::getline(std::cin, temp.BirthDate);
     truncate(temp.BirthDate,10);
-    std::cout << "New Sex: ";
+    std::cout << "Sex: ";
     std::getline(std::cin, temp.Sex);
     truncate(temp.Sex,1);
 
@@ -575,13 +576,13 @@ int main() {
         std::cin >> answer1;
         switch(answer1) {
         case 1:
-            system("cls");
             std::cout << "Enter filename to create: ";
             std::cin >> filename;
-            create_new_file(filename);
+            create_new_file(filename); 
+            system("cls");
             break;
         case 2:
-            system("cls");
+            //system("cls");
             show_directory();
             std::cout << "Enter name of text file to open(don't include extension name '.txt'): ";
             std::cin >> filename;
