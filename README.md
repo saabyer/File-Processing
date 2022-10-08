@@ -36,15 +36,13 @@ I already created an existing file called sample.txt that has data in it so we c
 
   After opening a file that has data inside it, it will display the contents of the file like this.
 
-Since it currently has only two students, we can add more.
-
+  ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.2.png)
 
 ### Adding Students
 
 Supply the neccessary information so that you can add the student and save it to the text file.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.png)
-![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/9.2.png)
 
 
 We can always add more
@@ -60,7 +58,7 @@ You can edit by supplying the Student ID of the student you want to edit.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
 
-After hitting the Enter button the data will no change.
+After hitting the Enter button the data will now change.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
