@@ -110,9 +110,9 @@ Entering the category and keyword so that it will only display the student that 
 
 <!-- show example of sort-->
 
--->![alt text]()
--->![alt text]()
--->![alt text]()
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.2.png)
+-->![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/8.3.png)
 
 
 
