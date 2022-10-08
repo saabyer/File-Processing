@@ -1,6 +1,8 @@
 # File-Processing
 ***
-First exercise for the subject Fundamentals of Database Systems using c++. The objectives of this project are: 
+First exercise for the subject Fundamentals of Database Systems using c++. 
+
+The objectives of this project are: 
 
 * To create a text file using any PL
 * To open an existing text file
