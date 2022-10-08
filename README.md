@@ -28,12 +28,13 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
    
  
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/opening_an_existing_file.png)
+
 I already created an existing file called sample.txt that has data in it so we can try to open it.
-After opening a file that has data inside it, it will display the contents of the file like this.
+
    
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/opening_an_existing_file2.png)
 
-  
+  After opening a file that has data inside it, it will display the contents of the file like this.
   
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/opened_file.png)
 
