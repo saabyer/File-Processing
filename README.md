@@ -11,6 +11,6 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
 * To filter data to a text file
 
 ***
-##Creating a text file
+## Creating a text file
 
 
