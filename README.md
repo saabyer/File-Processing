@@ -12,5 +12,6 @@ First exercise for the subject Fundamentals of Database Systems using c++. The o
 
 ***
 ## Creating a text file
+![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/create_file.png)
 
 
