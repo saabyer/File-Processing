@@ -124,7 +124,15 @@ As you can see, the text file is still the same since you are only changing the 
 
 
 
+## Discussion
+***
+1. If we add another field to the dataset say, Civil Status in between Firstname and Birthdate, will the modules or procedures you made will still be applicable?
+ > Yes, the modules and procedures will still be applicable if we add another field to the data set. 
 
+ 
+ 2. Discuss the processes that will be involved in implementing the changes. 
+> We just need to add another attributes to the student structure and everything will be fine. We can use the edit funtion so that we can add the missing data for the attributes of the students. 
+***
 
 
 ***

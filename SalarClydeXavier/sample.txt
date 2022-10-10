@@ -1,0 +1,10 @@
+21-1-01032	Espinas             	Halliah             	11/01/2002	F
+21-1-01028	Marfa               	Quinna Rykeil       	09/03/2002	F
+22-1-12345	Nabre               	Reian               	06/07/2003	M
+21-1-01026	Salar               	Clyde Xavier        	11/09/2002	M
+21-1-01030	Sy                  	Zoe Harvey          	07/05/2002	M
+21-1-01030	Terante             	Emilio Rafael       	03/14/2002	M
+22-1-01035	Tiu                 	Dustin              	06/14/2002	M
+22-1-01027	Viros               	William Jose        	12/03/2002	M
+21-1-04232	de los Reyes        	Rene Angelo         	07/25/2002	M
+21-1-69690	Acero               	Kritz               	11/18/2002	M
