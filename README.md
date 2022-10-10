@@ -58,7 +58,7 @@ You can edit by supplying the Student ID of the student you want to edit.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.png)
 
-After hitting the Enter button the data will now change.
+After hitting the Enter button the data will now change. Malinao, Khenneth will now be replaced by Nabre, Reian.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.2.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/5.3.png)
@@ -75,7 +75,7 @@ Just enter the Student ID of the student you want to delete.
 <!--show 2 images before and after delete image-->
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.png)
 
-After hitting the Enter button, the data of the student will be deleted in the interface and text file.
+After hitting the Enter button, the data of the student will be deleted in the interface and text file. de los Reyes, Rene Angelo is now deleted.
 
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.2.png)
 ![alt text](https://github.com/saabyer/File-Processing/blob/main/FileProcessingFinal/samples/6.3.png)
